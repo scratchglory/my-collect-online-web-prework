@@ -3,10 +3,12 @@ require 'pry'
 
 
 def my_collect(array)
-  
-  array.collect do |name|
-    name.split(" ").first
+  i = 0 
+  new_array = []
+  while i < array.length 
+    new_array << yield(array[i])      # defining how collect works
+    i += 1
   end
-  
+  new_array
 end
 
